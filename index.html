@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-MZ" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayGo | Pagamentos Internacionais com Mobile Money</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content.active { max-height: 1000px; }
+        .btn-gradient { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); transition: all 0.3s ease; }
+        .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4); }
+        .promo-badge { background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="fixed w-full z-50 glass border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-blue-600 p-1.5 rounded-lg text-white">
+                    <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-slate-800">PayGo</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#como-funciona" class="hover:text-blue-600 transition">Como Funciona</a>
+                <a href="#precos" class="hover:text-blue-600 transition">Taxas</a>
+                <a href="https://wa.me/+258837522255" class="btn-gradient text-white px-6 py-2.5 rounded-full shadow-md">Iniciar Pedido</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block italic">
+                A ponte para suas compras globais
+            </span>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-slate-900">
+                Compre no mundo todo com <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">M-Pesa, e-Mola ou mKesh</span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Pagamos suas contas no AliExpress, Amazon, Netflix e muito mais. Sem burocracia, sem cartões internacionais e com processamento em minutos.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/+258837522255" class="w-full md:w-auto btn-gradient text-white px-10 py-5 rounded-2xl text-lg font-bold flex items-center justify-center gap-3">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    Fazer Pedido via WhatsApp
+                </a>
+                <p class="text-sm text-slate-500 flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                    Atendimento imediate
+                </p>
+            </div>
+
+            <div class="mt-16 opacity-50 grayscale hover:grayscale-0 transition duration-500">
+                <p class="text-sm font-medium mb-6 uppercase tracking-widest text-slate-400">Suportamos as maiores plataformas</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+                    <span class="font-bold text-xl">AliExpress</span>
+                    <span class="font-bold text-xl">Amazon</span>
+                    <span class="font-bold text-xl">SHEIN</span>
+                    <span class="font-bold text-xl">Netflix</span>
+                    <span class="font-bold text-xl">Airbnb</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="space-y-4">
+                    <div class="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-blue-600">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">100% Seguro</h4>
+                    <p class="text-slate-600">Operação transparente com confirmação de pagamento instantânea.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-blue-600">
+                        <i data-lucide="clock" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">Velocidade Recorde</h4>
+                    <p class="text-slate-600">A maioria dos pagamentos é processada em menos de 30 minutos.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-blue-600">
+                        <i data-lucide="trending-up" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">Melhor Câmbio</h4>
+                    <p class="text-slate-600">Taxas competitivas e atualizadas diariamente para poupar o seu bolso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precos" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-4">Estrutura de Taxas Transparentes</h3>
+                <p class="text-slate-600">Sem taxas ocultas. Valores promocionais de lançamento.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 text-white">
+                                <th class="p-6 font-semibold">Valor da Compra (USD)</th>
+                                <th class="p-6 font-semibold">Taxa de Serviço</th>
+                                <th class="p-6 font-semibold">Processamento</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-blue-50/50 transition">
+                                <td class="p-6 font-medium">$1 a $20</td>
+                                <td class="p-6">
+                                    <span class="text-blue-600 font-bold text-lg">150 MT</span>
+                                </td>
+                                <td class="p-6 flex items-center gap-2 text-green-600 font-semibold italic">
+                                    <i data-lucide="zap" class="w-4 h-4"></i> ~30 min
+                                </td>
+                            </tr>
+                            <tr class="bg-blue-50/50 border-y-2 border-blue-200">
+                                <td class="p-6 font-medium">
+                                    $21 a $50
+                                    <span class="block text-[10px] uppercase font-bold text-blue-600 tracking-tighter">Mais Popular</span>
+                                </td>
+                                <td class="p-6">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-blue-600 font-extrabold text-2xl">250 MT</span>
+                                        <span class="text-slate-400 line-through text-sm">350 MT</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-green-600 font-semibold italic flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-4 h-4"></i> ~30 min
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50/50 transition">
+                                <td class="p-6 font-medium">$51 a $100</td>
+                                <td class="p-6 text-blue-600 font-bold text-lg">600 MT</td>
+                                <td class="p-6 text-green-600 font-semibold italic flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-4 h-4"></i> ~1 hora
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50/50 transition">
+                                <td class="p-6 font-medium">Acima de $100</td>
+                                <td class="p-6 text-blue-600 font-bold text-lg">7% do Valor</td>
+                                <td class="p-6 text-orange-600 font-semibold italic flex items-center gap-2">
+                                    <i data-lucide="help-circle" class="w-4 h-4"></i> Sob consulta
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="mt-6 text-center text-xs text-slate-500 italic">* Nota: A taxa de câmbio USD/MZN é aplicada no momento da cotação via WhatsApp.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 container mx-auto max-w-3xl">
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+            <button onclick="toggleAccordion()" class="w-full flex justify-between items-center p-6 font-bold text-slate-800 hover:bg-slate-50 transition">
+                <span class="flex items-center gap-3 italic text-lg text-blue-700">
+                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                    Termos de Uso e Condições de Serviço
+                </span>
+                <i data-lucide="chevron-down" id="accordion-icon" class="w-5 h-5 transition-transform"></i>
+            </button>
+            <div id="terms-content" class="accordion-content bg-slate-50/50">
+                <div class="p-6 space-y-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                    <div>
+                        <h5 class="font-bold text-slate-800 mb-2">1. Natureza do Serviço</h5>
+                        <p>A PayGo atua exclusivamente como uma facilitadora de pagamentos. Nós fornecemos os meios necessários (cartões internacionais ou contas digitais) para liquidar compras em plataformas estrangeiras em nome do cliente, recebendo o valor correspondente em Moeda Nacional (Meticais) via Mobile Money.</p>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-slate-800 mb-2">2. Limites de Responsabilidade</h5>
+                        <p>Nossa responsabilidade encerra-se no momento da emissão do comprovativo de pagamento da loja de destino. Não somos responsáveis por:</p>
+                        <ul class="list-disc ml-5 mt-2 space-y-1">
+                            <li>Atrasos na entrega física dos produtos;</li>
+                            <li>Qualidade, defeitos ou discrepâncias dos itens comprados;</li>
+                            <li>Retenções alfandegárias ou taxas de importação em Moçambique;</li>
+                            <li>Bloqueio de contas de utilizador em plataformas como Amazon, AliExpress ou Netflix.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-slate-800 mb-2">3. Política de Reembolso</h5>
+                        <p>O cliente tem direito ao reembolso total do valor pago (incluindo a taxa de serviço) apenas se a PayGo não conseguir processar o pagamento num prazo máximo de 24 horas úteis. Após o pagamento ser processado na loja de destino, não haverá lugar a reembolsos por parte da PayGo.</p>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-slate-800 mb-2">4. Taxas e Câmbio</h5>
+                        <p>As taxas de serviço são fixas conforme a tabela apresentada. A taxa de câmbio aplicada é definida diariamente pela PayGo, baseada nas flutuações de mercado e custos operacionais de liquidação internacional, podendo divergir das taxas comerciais dos bancos locais.</p>
+                    </div>
+
+                    <div class="bg-blue-100 p-4 rounded-lg">
+                        <p class="text-blue-800 font-semibold">Ao prosseguir com um pedido via WhatsApp, o cliente declara ter lido e aceitado integralmente estes termos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 py-16 px-6">
+        <div class="container mx-auto grid md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2 text-white italic">
+                    <i data-lucide="zap" class="w-6 h-6 fill-blue-600 text-blue-600"></i>
+                    <span class="text-2xl font-extrabold tracking-tight">PayGo</span>
+                </div>
+                <p class="text-sm">Conectando Moçambique ao mercado digital global com segurança e integridade.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest italic text-blue-400">Atendimento</h5>
+                <p class="flex items-center gap-2 mb-2 text-sm">
+                    <i data-lucide="mail" class="w-4 h-4 text-blue-500"></i>
+                    contact@paygo.co.mz
+                </p>
+                <p class="flex items-center gap-2 text-sm">
+                    <i data-lucide="phone" class="w-4 h-4 text-green-500"></i>
+                    +258 83 752 2255
+                </p>
+                <p class="text-xs mt-4 text-slate-500 italic">Segunda a Sábado: 08h - 20h</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest italic text-blue-400">Segurança de Dados</h5>
+                <p class="text-xs text-slate-500 leading-relaxed italic">
+                    Utilizamos encriptação de ponta a ponta em nossas comunicações. Suas informações de compra são tratadas com sigilo absoluto sob as leis de proteção de dados vigentes.
+                </p>
+            </div>
+        </div>
+        <div class="container mx-auto border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-500 italic">
+            &copy; 2026 PayGo Moçambique. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleAccordion() {
+            const content = document.getElementById('terms-content');
+            const icon = document.getElementById('accordion-icon');
+            content.classList.toggle('active');
+            
+            if(content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
