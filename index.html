@@ -140,41 +140,109 @@
     </div>
 </section>
 
+<section id="autorizar" class="container mx-auto py-12 px-6">
+    <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+        <h3 class="text-2xl font-bold text-blue-800 mb-2 text-center">Autorizar Pagamento</h3>
+        <p class="text-center text-gray-500 mb-6 text-sm italic">* Taxa de câmbio USD/MZN aplicada no momento da cotação via WhatsApp.</p>
+        
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Valor da Compra (USD)</label>
+                <input type="number" id="usdAmount" placeholder="Ex: 50" 
+                    class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition">
+            </div>
+
+            <div class="flex items-center p-4 bg-green-50 rounded-lg border border-green-200">
+                <input type="checkbox" id="promoPrimeira" class="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500 cursor-pointer">
+                <label for="promoPrimeira" class="ml-3 text-sm text-green-800 font-medium cursor-pointer">
+                    Minha primeira compra (Taxa Grátis até $5)
+                </label>
+            </div>
+
+            <button onclick="gerarOrcamento()" 
+                class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg transition transform active:scale-95">
+                Calcular Total
+            </button>
+        </div>
+
+        <div id="resultadoArea" class="hidden mt-8 p-6 bg-blue-50 rounded-xl border-l-4 border-blue-700">
+            <div class="flex justify-between mt-2">
+                <span class="text-gray-600">Conversão (Base 68.00):</span>
+                <span id="valorConvertido" class="font-bold">0.00 MT</span>
+            </div>
+            <div class="flex justify-between mt-1">
+                <span class="text-gray-600">Taxa de Serviço:</span>
+                <span id="taxaServico" class="font-bold text-blue-700">0.00 MT</span>
+            </div>
+            
+            <div id="alertaPromo" class="hidden mt-2 text-xs font-bold text-green-700 uppercase animate-pulse">
+                ✨ Promoção: Taxa Zero Aplicada!
+            </div>
+
+            <div class="flex justify-between mt-4 pt-4 border-t border-blue-200">
+                <span class="text-xl font-bold text-gray-800">Total a Pagar:</span>
+                <span id="valorTotal" class="text-2xl font-black text-blue-900">0.00 MT</span>
+            </div>
+            
+            <a id="linkZap" href="#" target="_blank"
+                class="mt-6 block w-full bg-green-500 hover:bg-green-600 text-white text-center font-bold py-4 rounded-xl shadow-md transition">
+                Autorizar via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
 <script>
 function gerarOrcamento() {
     const usd = parseFloat(document.getElementById('usdAmount').value);
-    if (!usd || usd <= 0) { alert("Por favor, insira um valor válido."); return; }
+    const promoAtiva = document.getElementById('promoPrimeira').checked;
+    const alerta = document.getElementById('alertaPromo');
+    const displayTaxa = document.getElementById('taxaServico');
+    
+    if (!usd || usd <= 0) { 
+        alert("Por favor, introduza um valor válido para a compra."); 
+        return; 
+    }
 
-    const cambio = 68; // Defina seu câmbio atual aqui
+    const cambio = 68; // Base de câmbio para estimativa
     const valorEmMT = usd * cambio;
     let taxa = 0;
 
-    // Lógica baseada na sua tabela de preços
-    if (usd <= 20) {
-        taxa = 150;
-    } else if (usd <= 50) {
-        taxa = 350;
-    } else if (usd <= 100) {
-        taxa = 600;
+    // Lógica de Promoção + Tabela Atualizada (Imagem 8)
+    if (promoAtiva && usd <= 5) {
+        taxa = 0;
+        alerta.classList.remove('hidden');
+        displayTaxa.classList.add('text-green-600');
     } else {
-        taxa = valorEmMT * 0.07; // 7% para valores acima de 100 USD
+        alerta.classList.add('hidden');
+        displayTaxa.classList.remove('text-green-600');
+        
+        if (usd <= 20) {
+            taxa = 150;
+        } else if (usd <= 50) {
+            taxa = 250; // Atualizado para o novo valor promocional da imagem
+        } else if (usd <= 100) {
+            taxa = 600;
+        } else {
+            taxa = valorEmMT * 0.07; // 7% para valores acima de $100
+        }
     }
 
     const totalFinal = valorEmMT + taxa;
 
-    // Atualizar UI
     document.getElementById('valorConvertido').innerText = valorEmMT.toFixed(2) + " MT";
     document.getElementById('taxaServico').innerText = taxa.toFixed(2) + " MT";
     document.getElementById('valorTotal').innerText = totalFinal.toFixed(2) + " MT";
     
-    // Preparar Link WhatsApp
-    const msg = `Olá PayGo! Quero autorizar um pagamento:%0A- Valor: $${usd} USD%0A- Total em Meticais: ${totalFinal.toFixed(2)} MT%0A---%0AAguardando instruções para o envio.`;
-    document.getElementById('linkZap').href = `https://wa.me/258SEUNUMERO?text=${msg}`;
+    const promoTexto = (promoAtiva && usd <= 5) ? "[PROMO PRIMEIRA COMPRA]" : "";
+    const msg = `Olá PayGo! Quero autorizar um pagamento ${promoTexto}:%0A- Valor: $${usd} USD%0A- Total estimado: ${totalFinal.toFixed(2)} MT%0A---%0AAguardando confirmação do câmbio e dados de pagamento.`;
     
-    // Mostrar resultado
+    // IMPORTANTE: Substitua o XXXXXXXXX pelo seu número de WhatsApp
+    document.getElementById('linkZap').href = `https://wa.me/+258837522255?text=${msg}`;
     document.getElementById('resultadoArea').classList.remove('hidden');
 }
 </script>
+
 
 
     <section id="precos" class="py-20 bg-slate-50">
