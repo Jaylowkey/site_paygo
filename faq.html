@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-MZ" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Centro de Ajuda & FAQ | PayGo Moçambique</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb' stroke='none'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'></polygon></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"'], display: ['"Outfit"'] }, colors: { brand: { 50: '#eff6ff', 600: '#2563eb', 950: '#0f172a' } } } } }
+    </script>
+    <style>
+        .accordion-content { max-height: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .accordion-item.active .accordion-content { max-height: 600px; padding-bottom: 2rem; }
+        .accordion-item.active .chevron { transform: rotate(180deg); }
+        #cookie-banner { transform: translateY(100%); transition: transform 0.5s ease; }
+        #cookie-banner.show { transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased text-left">
+    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-md z-[100] bg-white border border-slate-200 shadow-2xl rounded-3xl p-6 hidden">
+        <div class="flex items-start gap-4">
+            <div class="bg-blue-50 p-3 rounded-2xl text-brand-600"><i data-lucide="cookie" class="w-6 h-6"></i></div>
+            <div>
+                <h4 class="font-bold text-sm">Segurança de Dados</h4>
+                <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">Este site utiliza cookies para garantir a segurança das simulações. Ao continuar, você aceita nossa política.</p>
+                <div class="flex gap-2 mt-3"><button onclick="acceptCookies()" class="bg-slate-950 text-white text-[10px] font-bold px-4 py-2 rounded-lg">Aceitar e Fechar</button></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center text-left">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="bg-brand-600 p-2 rounded-xl text-white"><i data-lucide="zap" class="w-5 h-5 fill-current text-left"></i></div>
+                <span class="text-2xl font-display font-bold text-white tracking-tight text-left text-left">PayGo</span>
+            </a>
+            <a href="index.html" class="text-xs font-bold text-slate-300 hover:text-white transition-all bg-white/5 px-5 py-2.5 rounded-full border border-white/10">Início</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section class="bg-slate-950 py-24 text-white text-center">
+            <div class="container mx-auto px-6">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-xs">Apoio ao Cliente</span>
+                <h1 class="text-4xl md:text-5xl font-display font-bold mt-4">Como podemos ajudar?</h1>
+            </div>
+        </section>
+
+        <section class="py-20 container mx-auto px-6 max-w-4xl">
+            <div class="space-y-6 text-left">
+                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
+                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-slate-900 text-lg">A PayGo é uma loja online?</span>
+                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm">
+                        Não. A PayGo é um <strong>facilitador de pagamentos</strong>. Nós não vendemos roupas ou eletrônicos. Nosso serviço é permitir que você use o seu saldo em Meticais (M-Pesa/e-Mola) para pagar pedidos em sites internacionais (AliExpress, Shein, Amazon, etc.) que só aceitam Dólares ou Cartões de Crédito.
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden text-left">
+                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-slate-900 text-lg text-left">Quanto tempo demora a confirmação?</span>
+                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm text-left">
+                        O processo é quase imediato. Uma vez que você envia o valor em Meticais e o comprovativo via WhatsApp, nossa equipe processa o pagamento internacional em um intervalo de <strong>15 a 60 minutos</strong> (dentro do horário comercial). Fora do horário, o processamento ocorre na manhã seguinte.
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
+                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-slate-900 text-lg">E se o site estrangeiro recusar o pagamento?</span>
+                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm text-left">
+                        Em casos raros de recusa técnica pelo site de destino, a PayGo garante o <strong>reembolso integral</strong> do seu valor em Meticais para o mesmo número de origem no prazo de 24 horas, ou tentamos o pagamento novamente se você desejar.
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
+                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-slate-900 text-lg">A PayGo faz a entrega das encomendas?</span>
+                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm text-left">
+                        A logística de entrega (transporte da China/EUA para Moçambique) é de total responsabilidade da loja onde comprou e dos correios/transportadoras. A PayGo garante apenas que o seu pedido seja <strong>PAGO e CONFIRMADO</strong> na plataforma.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 text-left">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-[11px] font-medium tracking-wide">
+            <div>
+                <h5 class="text-white font-bold mb-6 uppercase text-xs">Suporte</h5>
+                <ul class="space-y-3">
+                    <li><a href="faq.html" target="_blank" rel="noopener" class="hover:text-white">Dúvidas Frequentes</a></li>
+                    <li><a href="contacto.html" target="_blank" rel="noopener" class="hover:text-white">Contactar Equipa</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 uppercase text-xs">Legal</h5>
+                <ul class="space-y-3">
+                    <li><a href="termos.html" target="_blank" rel="noopener" class="hover:text-white">Termos de Serviço</a></li>
+                    <li><a href="privacidade.html" target="_blank" rel="noopener" class="hover:text-white">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 uppercase text-xs text-left">Segurança</h5>
+                <div class="flex items-center gap-2 mb-4 bg-green-500/10 border border-green-500/20 p-2 rounded-lg w-fit text-left">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
+                    <span class="text-[10px] font-bold text-green-400 uppercase text-left">Selo Ativo</span>
+                </div>
+                <div class="flex gap-4">
+                    <img src="mpesa2.png" alt="M-Pesa" class="h-8 grayscale brightness-200">
+                    <img src="emola1.png" alt="e-Mola" class="h-8 grayscale brightness-200">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.onload = function() { if (!localStorage.getItem('cookiesAccepted')) { const banner = document.getElementById('cookie-banner'); banner.classList.remove('hidden'); setTimeout(() => banner.classList.add('show'), 1000); } }
+        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookie-banner').classList.remove('show'); setTimeout(() => document.getElementById('cookie-banner').classList.add('hidden'), 500); }
+    </script>
+</body>
+</html>

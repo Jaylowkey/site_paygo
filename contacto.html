@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    <title>Contacto | PayGo Moçambique</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb' stroke='none'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'></polygon></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"'], display: ['"Outfit"'] }, colors: { brand: { 600: '#2563eb', 950: '#0f172a' } } } }
+        }
+    </script>
+    <style>
+        .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #0f172a); }
+        #cookie-banner { transform: translateY(100%); transition: transform 0.5s ease; }
+        #cookie-banner.show { transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased text-left">
+
+    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-md z-[100] bg-white border border-slate-200 shadow-2xl rounded-3xl p-6 hidden">
+        <div class="flex items-start gap-4">
+            <div class="bg-blue-50 p-3 rounded-2xl text-brand-600"><i data-lucide="cookie" class="w-6 h-6"></i></div>
+            <div>
+                <h4 class="font-bold text-sm">Privacidade e Cookies</h4>
+                <div class="flex gap-2 mt-3"><button onclick="acceptCookies()" class="bg-slate-950 text-white text-[10px] font-bold px-4 py-2 rounded-lg">Entendido</button></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/5 text-left">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center text-left">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="bg-brand-600 p-2 rounded-xl text-white"><i data-lucide="zap" class="w-5 h-5 fill-current"></i></div>
+                <span class="text-2xl font-display font-bold text-white tracking-tight">PayGo</span>
+            </a>
+            <a href="index.html" class="text-xs font-bold text-slate-300 hover:text-white transition-all bg-white/5 px-4 py-2 rounded-full border border-white/10">Início</a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-6 max-w-4xl text-left">
+            <h1 class="text-4xl font-display font-bold text-slate-900 mb-6 text-left">Central de Atendimento</h1>
+            <p class="text-slate-500 mb-12 text-left">Nossa equipa está disponível para suporte de Segunda a Sábado.</p>
+
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <a href="https://wa.me/258837522255" target="_blank" rel="noopener" class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-lg hover:-translate-y-1 transition-all group">
+                    <div class="bg-green-50 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-600 group-hover:text-white transition-all">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">WhatsApp</h3>
+                    <p class="text-xs text-slate-500 mb-4">Suporte prioritário e imediato.</p>
+                    <span class="text-green-600 font-bold">+258 83 752 2255</span>
+                </a>
+
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-lg hover:-translate-y-1 transition-all group">
+                    <div class="bg-blue-50 text-brand-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-all">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">E-mail</h3>
+                    <p class="text-xs text-slate-500 mb-4">Para questões administrativas.</p>
+                    <span class="text-brand-600 font-bold">suporte@paygo.co.mz</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-left">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-xs text-left">
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase">Legal</h5>
+                <ul class="space-y-2">
+                    <li><a href="termos.html" target="_blank" rel="noopener" class="hover:text-white">Termos de Uso</a></li>
+                    <li><a href="privacidade.html" target="_blank" rel="noopener" class="hover:text-white">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="flex items-center gap-2 mb-4 bg-green-500/10 border border-green-500/20 p-2 rounded-lg w-fit text-left">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-green-500 text-left"></i>
+                    <span class="text-[10px] font-bold text-green-400 uppercase tracking-tighter text-left">Selo Ativo</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.onload = function() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                const banner = document.getElementById('cookie-banner');
+                banner.classList.remove('hidden');
+                setTimeout(() => banner.classList.add('show'), 1000);
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.remove('show');
+            setTimeout(() => banner.classList.add('hidden'), 500);
+        }
+    </script>
+</body>
+</html>

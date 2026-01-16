@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Termos e Condições | PayGo Moçambique</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb' stroke='none'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'></polygon></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"'], display: ['"Outfit"'] }, colors: { brand: { 600: '#2563eb' } } } } }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased text-left">
+
+    <header class="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center text-left">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="bg-brand-600 p-2 rounded-xl text-white"><i data-lucide="zap" class="w-5 h-5 fill-current text-left"></i></div>
+                <span class="text-2xl font-display font-bold text-white tracking-tight text-left">PayGo</span>
+            </a>
+            <a href="index.html" class="text-xs font-bold text-slate-300 hover:text-white px-4 py-2 rounded-full border border-white/10">Sair</a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6">
+        <article class="container mx-auto max-w-4xl bg-white p-10 md:p-16 rounded-[3rem] shadow-xl border border-slate-200 text-left">
+            <h1 class="text-3xl font-display font-bold text-slate-950 mb-8 border-b pb-6 text-left">Termos de Serviço</h1>
+            
+            <div class="space-y-10 text-sm text-slate-600 leading-relaxed text-left">
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 mb-4">1. Intermediação de Pagamentos</h2>
+                    <p>A PayGo (doravante "Nós") atua exclusivamente como intermediária tecnológica para liquidação de transações internacionais. Ao utilizar nosso simulador e solicitar um pagamento, o utilizador reconhece que a PayGo não possui qualquer vínculo com as lojas vendedoras (AliExpress, Shein, Amazon, etc.) e não é responsável pela qualidade, envio ou entrega física dos produtos.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 mb-4">2. Política de Câmbio e Taxas</h2>
+                    <p>Nossa taxa base (88.00 MT/USD) é calculada com base na cotação média de mercado acrescida de custos operacionais de envio internacional e IOF. Este valor pode ser alterado sem aviso prévio. O valor bloqueado no momento da simulação é válido apenas por 30 minutos.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 mb-4 text-left">3. Responsabilidade do Utilizador</h2>
+                    <p>O utilizador é o único responsável pela exatidão dos dados fornecidos: links de produtos, IDs de jogador ou endereços de e-mail. Pagamentos efetuados para dados incorretos fornecidos pelo cliente <strong>não são passíveis de reembolso</strong>, dada a natureza imediata e irreversível das redes de pagamento internacionais.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 mb-4">4. Lei Aplicável</h2>
+                    <p>Estes termos regem-se pelas leis da República de Moçambique. Qualquer disputa será resolvida no Foro da Comarca de Maputo.</p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-left">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-[11px] text-left">
+            <div><h5 class="text-white font-bold mb-4 uppercase text-left">Acesso Rápido</h5>
+                <ul class="space-y-2 text-left">
+                    <li><a href="faq.html" target="_blank" rel="noopener" class="hover:text-white">Dúvidas</a></li>
+                    <li><a href="privacidade.html" target="_blank" rel="noopener" class="hover:text-white">Privacidade</a></li>
+                </ul>
+            </div>
+            <div><h5 class="text-white font-bold mb-4 uppercase text-left text-left">Pagamentos</h5>
+                <div class="flex items-center gap-2 mb-4 bg-green-500/10 border border-green-500/20 p-2 rounded-lg w-fit text-left text-left">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-green-500 text-left"></i>
+                    <span class="text-[10px] font-bold text-green-400 uppercase text-left">Proteção 256-bit</span>
+                </div>
+            </div>
+            <div class="text-left"><p>&copy; 2026 PayGo Moçambique. Versão dos Termos: 2.1.0</p></div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
