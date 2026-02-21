@@ -1,134 +1,299 @@
 <!DOCTYPE html>
 <html lang="pt-MZ" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Centro de Ajuda & FAQ | PayGo Moçambique</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb' stroke='none'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'></polygon></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"'], display: ['"Outfit"'] }, colors: { brand: { 50: '#eff6ff', 600: '#2563eb', 950: '#0f172a' } } } } }
-    </script>
-    <style>
-        .accordion-content { max-height: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .accordion-item.active .accordion-content { max-height: 600px; padding-bottom: 2rem; }
-        .accordion-item.active .chevron { transform: rotate(180deg); }
-        #cookie-banner { transform: translateY(100%); transition: transform 0.5s ease; }
-        #cookie-banner.show { transform: translateY(0); }
-    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5084926593017837" crossorigin="anonymous"></script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PCQMSK6G');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>FAQ - PayGo Moçambique</title>
+<meta name="description" content="Perguntas frequentes sobre pagamentos internacionais via M-Pesa com PayGo.">
+<meta name="theme-color" content="#0f172a">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+display: ['"Outfit"', 'sans-serif'],
+},
+colors: {
+brand: {
+50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+800: '#1e40af', 900: '#1e3a8a', 950: '#172554',
+}
+}
+}
+}
+}
+</script>
+<style>
+.bg-noise {
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+pointer-events: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 5;
+}
+.glass-nav {
+background: rgba(15, 23, 42, 0.85);
+backdrop-filter: blur(12px) saturate(180%);
+border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.faq-item {
+border-bottom: 1px solid #e2e8f0;
+transition: all 0.3s ease;
+}
+.faq-item.active {
+background: #f8fafc;
+border-color: #3b82f6;
+}
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.faq-item.active .faq-answer {
+max-height: 500px;
+}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased text-left">
-    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-md z-[100] bg-white border border-slate-200 shadow-2xl rounded-3xl p-6 hidden">
-        <div class="flex items-start gap-4">
-            <div class="bg-blue-50 p-3 rounded-2xl text-brand-600"><i data-lucide="cookie" class="w-6 h-6"></i></div>
-            <div>
-                <h4 class="font-bold text-sm">Segurança de Dados</h4>
-                <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">Este site utiliza cookies para garantir a segurança das simulações. Ao continuar, você aceita nossa política.</p>
-                <div class="flex gap-2 mt-3"><button onclick="acceptCookies()" class="bg-slate-950 text-white text-[10px] font-bold px-4 py-2 rounded-lg">Aceitar e Fechar</button></div>
-            </div>
-        </div>
-    </div>
+<body class="bg-slate-50 text-slate-900 font-sans overflow-x-hidden antialiased">
+<div class="bg-noise"></div>
 
-    <header class="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/5">
-        <div class="container mx-auto px-6 h-20 flex justify-between items-center text-left">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="bg-brand-600 p-2 rounded-xl text-white"><i data-lucide="zap" class="w-5 h-5 fill-current text-left"></i></div>
-                <span class="text-2xl font-display font-bold text-white tracking-tight text-left text-left">PayGo</span>
-            </a>
-            <a href="index.html" class="text-xs font-bold text-slate-300 hover:text-white transition-all bg-white/5 px-5 py-2.5 rounded-full border border-white/10">Início</a>
-        </div>
-    </header>
+<!-- Header -->
+<header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-6 h-20 flex justify-between items-center">
+<a href="index.html" class="flex items-center gap-2 group">
+<div class="bg-gradient-to-tr from-brand-500 to-brand-700 p-2 rounded-xl text-white shadow-lg">
+<i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+</div>
+<span class="text-2xl font-display font-bold text-white tracking-tight">PayGo</span>
+</a>
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300/80">
+<a href="index.html#como-usar" class="hover:text-white transition-colors">Como Funciona</a>
+<a href="index.html#precos" class="hover:text-white transition-colors">Taxas</a>
+<a href="faq.html" class="text-white">FAQ</a>
+<a href="contacto.html" class="hover:text-white transition-colors">Contacto</a>
+</nav>
+</div>
+</header>
 
-    <main class="pt-20">
-        <section class="bg-slate-950 py-24 text-white text-center">
-            <div class="container mx-auto px-6">
-                <span class="text-brand-500 font-bold uppercase tracking-widest text-xs">Apoio ao Cliente</span>
-                <h1 class="text-4xl md:text-5xl font-display font-bold mt-4">Como podemos ajudar?</h1>
-            </div>
-        </section>
+<!-- Main Content -->
+<main class="pt-32 pb-20">
+<section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+<div class="container mx-auto px-6 text-center">
+<h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-6">Perguntas Frequentes</h1>
+<p class="text-slate-400 text-lg max-w-2xl mx-auto">Encontre respostas para as dúvidas mais comuns sobre nossos serviços de pagamento internacional.</p>
+</div>
+</section>
 
-        <section class="py-20 container mx-auto px-6 max-w-4xl">
-            <div class="space-y-6 text-left">
-                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
-                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
-                        <span class="font-bold text-slate-900 text-lg">A PayGo é uma loja online?</span>
-                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm">
-                        Não. A PayGo é um <strong>facilitador de pagamentos</strong>. Nós não vendemos roupas ou eletrônicos. Nosso serviço é permitir que você use o seu saldo em Meticais (M-Pesa/e-Mola) para pagar pedidos em sites internacionais (AliExpress, Shein, Amazon, etc.) que só aceitam Dólares ou Cartões de Crédito.
-                    </div>
-                </div>
+<section class="py-20 bg-slate-50">
+<div class="container mx-auto px-6 max-w-4xl">
+<!-- Categorias -->
+<div class="grid md:grid-cols-3 gap-4 mb-12">
+<div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-brand-300 transition cursor-pointer group">
+<i data-lucide="credit-card" class="w-8 h-8 text-brand-600 mb-3 group-hover:scale-110 transition"></i>
+<h3 class="font-bold text-slate-900">Pagamentos</h3>
+<p class="text-sm text-slate-500 mt-1">Como funciona o M-Pesa</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-brand-300 transition cursor-pointer group">
+<i data-lucide="shield-check" class="w-8 h-8 text-green-600 mb-3 group-hover:scale-110 transition"></i>
+<h3 class="font-bold text-slate-900">Segurança</h3>
+<p class="text-sm text-slate-500 mt-1">Proteção de dados</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-brand-300 transition cursor-pointer group">
+<i data-lucide="clock" class="w-8 h-8 text-purple-600 mb-3 group-hover:scale-110 transition"></i>
+<h3 class="font-bold text-slate-900">Prazos</h3>
+<p class="text-sm text-slate-500 mt-1">Tempo de processamento</p>
+</div>
+</div>
 
-                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden text-left">
-                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
-                        <span class="font-bold text-slate-900 text-lg text-left">Quanto tempo demora a confirmação?</span>
-                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm text-left">
-                        O processo é quase imediato. Uma vez que você envia o valor em Meticais e o comprovativo via WhatsApp, nossa equipe processa o pagamento internacional em um intervalo de <strong>15 a 60 minutos</strong> (dentro do horário comercial). Fora do horário, o processamento ocorre na manhã seguinte.
-                    </div>
-                </div>
+<!-- FAQ Items -->
+<div class="space-y-4">
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">O que é a PayGo?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">A PayGo é uma plataforma moçambicana que permite realizar pagamentos internacionais usando M-Pesa ou e-Mola. Facilitamos compras em sites como AliExpress, Amazon, Shein, Netflix, Spotify e muito mais, sem necessidade de cartão de crédito internacional.</p>
+</div>
+</div>
 
-                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
-                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
-                        <span class="font-bold text-slate-900 text-lg">E se o site estrangeiro recusar o pagamento?</span>
-                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm text-left">
-                        Em casos raros de recusa técnica pelo site de destino, a PayGo garante o <strong>reembolso integral</strong> do seu valor em Meticais para o mesmo número de origem no prazo de 24 horas, ou tentamos o pagamento novamente se você desejar.
-                    </div>
-                </div>
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Como faço para usar o serviço?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">1. Preencha o formulário no site com o link do produto e valor em USD<br>2. Receba a cotação em Meticais via WhatsApp<br>3. Efetue o pagamento via M-Pesa ou e-Mola<br>4. Receba o comprovativo de pagamento internacional em PDF</p>
+</div>
+</div>
 
-                <div class="accordion-item bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
-                    <button class="w-full px-8 py-7 flex justify-between items-center text-left" onclick="this.parentElement.classList.toggle('active')">
-                        <span class="font-bold text-slate-900 text-lg">A PayGo faz a entrega das encomendas?</span>
-                        <i data-lucide="chevron-down" class="chevron w-6 h-6 text-brand-600 transition-transform"></i>
-                    </button>
-                    <div class="accordion-content px-8 text-slate-600 leading-relaxed text-sm text-left">
-                        A logística de entrega (transporte da China/EUA para Moçambique) é de total responsabilidade da loja onde comprou e dos correios/transportadoras. A PayGo garante apenas que o seu pedido seja <strong>PAGO e CONFIRMADO</strong> na plataforma.
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Qual é a taxa de câmbio?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">Utilizamos a taxa de câmbio oficial do dia, atualmente em <strong>88.00 MT por 1 USD</strong>. Esta taxa pode variar diariamente conforme o mercado. O valor exato será confirmado no momento do seu pedido.</p>
+</div>
+</div>
 
-    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 text-left">
-        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-[11px] font-medium tracking-wide">
-            <div>
-                <h5 class="text-white font-bold mb-6 uppercase text-xs">Suporte</h5>
-                <ul class="space-y-3">
-                    <li><a href="faq.html" target="_blank" rel="noopener" class="hover:text-white">Dúvidas Frequentes</a></li>
-                    <li><a href="contacto.html" target="_blank" rel="noopener" class="hover:text-white">Contactar Equipa</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="text-white font-bold mb-6 uppercase text-xs">Legal</h5>
-                <ul class="space-y-3">
-                    <li><a href="termos.html" target="_blank" rel="noopener" class="hover:text-white">Termos de Serviço</a></li>
-                    <li><a href="privacidade.html" target="_blank" rel="noopener" class="hover:text-white">Privacidade</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="text-white font-bold mb-6 uppercase text-xs text-left">Segurança</h5>
-                <div class="flex items-center gap-2 mb-4 bg-green-500/10 border border-green-500/20 p-2 rounded-lg w-fit text-left">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
-                    <span class="text-[10px] font-bold text-green-400 uppercase text-left">Selo Ativo</span>
-                </div>
-                <div class="flex gap-4">
-                    <img src="mpesa2.png" alt="M-Pesa" class="h-8 grayscale brightness-200">
-                    <img src="emola1.png" alt="e-Mola" class="h-8 grayscale brightness-200">
-                </div>
-            </div>
-        </div>
-    </footer>
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Quais são as taxas de serviço?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">
+• Até $5 (1ª compra): <strong>GRÁTIS</strong><br>
+• Até $20: <strong>150 MT</strong><br>
+• $21-$50: <strong>250 MT</strong><br>
+• $51-$100: <strong>600 MT</strong><br>
+• Acima de $100: <strong>7% do valor</strong>
+</p>
+</div>
+</div>
 
-    <script>
-        lucide.createIcons();
-        window.onload = function() { if (!localStorage.getItem('cookiesAccepted')) { const banner = document.getElementById('cookie-banner'); banner.classList.remove('hidden'); setTimeout(() => banner.classList.add('show'), 1000); } }
-        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookie-banner').classList.remove('show'); setTimeout(() => document.getElementById('cookie-banner').classList.add('hidden'), 500); }
-    </script>
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Quanto tempo demora o processamento?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">A maioria dos pedidos é processada em <strong>menos de 30 minutos</strong> durante o horário comercial (8h-17h). Pedidos fora do horário comercial são processados no próximo dia útil.</p>
+</div>
+</div>
+
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">É seguro pagar via M-Pesa?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">Sim! Todos os pagamentos são processados através dos canais oficiais do M-Pesa e e-Mola. Fornecemos comprovativo de cada transação e nossa equipa está disponível para suporte via WhatsApp a qualquer momento.</p>
+</div>
+</div>
+
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Quais sites posso comprar?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">Trabalhamos com os principais sites internacionais: AliExpress, Amazon, Shein, Netflix, Spotify, Steam, Google Play, Apple, Microsoft, Adobe, e muitos outros. Consulte-nos para sites específicos.</p>
+</div>
+</div>
+
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">O que acontece se houver um problema?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">Nossa equipa de suporte está disponível via WhatsApp para resolver qualquer problema. Em caso de falha no processamento, o valor será reembolsado integralmente via M-Pesa.</p>
+</div>
+</div>
+
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Preciso de conta bancária?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">Não! Basta ter uma conta M-Pesa ou e-Mola ativa. Não é necessário cartão de crédito, conta bancária ou documentação complexa.</p>
+</div>
+</div>
+
+<div class="faq-item bg-white rounded-2xl border border-slate-200 p-6 cursor-pointer" onclick="toggleFaq(this)">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg text-slate-900">Como contacto o suporte?</h3>
+<i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+</div>
+<div class="faq-answer pt-4">
+<p class="text-slate-600 leading-relaxed">Pode contactar-nos via WhatsApp: <strong>+258 83 752 2255</strong>. Também respondemos por Instagram e Facebook. Horário de atendimento: Segunda a Sexta, 8h-17h.</p>
+</div>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="mt-16 text-center">
+<p class="text-slate-600 mb-6">Ainda tem dúvidas?</p>
+<a href="https://wa.me/+258837522255" class="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#128C7E] transition-all">
+<i data-lucide="message-circle" class="w-5 h-5"></i>
+Fale Conosco no WhatsApp
+</a>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+<div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-sm">
+<div class="col-span-1">
+<div class="flex items-center space-x-2 text-white italic mb-6">
+<i data-lucide="zap" class="w-6 h-6 fill-blue-600 text-blue-600"></i>
+<span class="text-2xl font-extrabold tracking-tight">PayGo</span>
+</div>
+<p class="mb-6 opacity-80 leading-relaxed text-slate-500">
+Sua ponte segura para o comércio global. Compre no mundo todo usando M-Pesa e e-Mola sem fronteiras.
+</p>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 text-xs uppercase">Suporte</h5>
+<ul class="space-y-4">
+<li><a href="faq.html" class="hover:text-white transition">FAQ</a></li>
+<li><a href="contacto.html" class="hover:text-white transition">Central de Ajuda</a></li>
+<li><a href="index.html#como-usar" class="hover:text-white transition">Como Funciona</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 text-xs uppercase">Legal</h5>
+<ul class="space-y-4">
+<li><a href="termos.html" class="hover:text-white transition">Termos e Condições</a></li>
+<li><a href="privacidade.html" class="hover:text-white transition">Política de Privacidade</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 text-xs uppercase">Pagamento Seguro</h5>
+<div class="flex gap-4">
+<div class="bg-white rounded-lg p-2 h-10 w-auto flex items-center justify-center">
+<img src="mpesa2.png" alt="M-Pesa" class="h-full w-auto">
+</div>
+<div class="bg-white rounded-lg p-2 h-10 w-auto flex items-center justify-center">
+<img src="emola1.png" alt="e-Mola" class="h-full w-auto">
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-900 mt-16 pt-8 text-center text-xs opacity-30">
+<span>&copy; 2026 PayGo Serviços Digitais. Todos direitos reservados.</span>
+</div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+lucide.createIcons();
+AOS.init({ duration: 800, once: true });
+
+function toggleFaq(item) {
+const wasActive = item.classList.contains('active');
+document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+if (!wasActive) item.classList.add('active');
+}
+
+window.addEventListener('scroll', () => {
+const nav = document.getElementById('navbar');
+window.scrollY > 20 ? nav.classList.add('glass-nav') : nav.classList.remove('glass-nav');
+});
+</script>
 </body>
 </html>
