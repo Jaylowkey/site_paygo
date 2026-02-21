@@ -561,7 +561,7 @@
                     <ul class="space-y-4">
                         <li><a href="faq.html" class="hover:text-white hover:translate-x-1 transition-all inline-block flex items-center gap-2">FAQ - Perguntas Frequentes</a></li>
                         <li><a href="contacto.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Central de Ajuda</a></li>
-                        <li><a href="#como-usar" class="hover:text-white hover:translate-x-1 transition-all inline-block">Como Funciona</a></li>
+                        <li><a href="#como-funciona.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Como Funciona</a></li>
                     </ul>
                 </div>
 
@@ -694,7 +694,7 @@
                 let tax = (usd <= 5 && isFirst) ? 0 : (usd <= 20 ? 150 : (usd <= 50 ? 250 : (usd <= 100 ? 600 : (usd * BINANCE_RATE * 0.07))));
                 const total = (usd * BINANCE_RATE) + tax;
                 const msg = `👋 Olá PayGo! Pedido via site:\n👤 *Cliente:* ${name}\n📦 *Categoria:* ${type.toUpperCase()}\n🔗 *Link/ID:* ${detail}\n💵 *Valor USD:* $${usd}\n📊 *Câmbio:* ${BINANCE_RATE} MT\n🏷 *Taxa:* ${tax} MT\n💰 *Total:* ${total.toLocaleString('pt-MZ', {minimumFractionDigits: 2})} MT`;
-                window.open(`https://wa.me/258837522255?text=${encodeURIComponent(msg)}`, '_blank');
+                window.open(`https://wa.me/258877522255?text=${encodeURIComponent(msg)}`, '_blank');
                 showToast('Redirecionando...', 'success');
             }, 800);
         }
