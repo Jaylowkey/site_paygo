@@ -250,20 +250,62 @@ lucide.createIcons();
 AOS.init({ duration: 800, once: true });
 
 function handleContactSubmit(e) {
-e.preventDefault();
-const btn = document.getElementById('submitBtn');
-btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Enviando...';
-lucide.createIcons();
-setTimeout(() => {
-btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> Mensagem Enviada!';
-btn.classList.replace('bg-brand-600', 'bg-green-600');
-setTimeout(() => {
-btn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> Enviar Mensagem';
-btn.classList.replace('bg-green-600', 'bg-brand-600');
-document.getElementById('contactForm').reset();
-}, 3000);
-}, 1500);
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    
+    // Captura os valores digitados no formulário
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const subject = document.getElementById('contactSubject').value;
+    const message = document.getElementById('contactMessage').value;
+
+    // Mostra o estado de "Enviando..."
+    btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Enviando...';
+    lucide.createIcons();
+
+    // Envia os dados para o FormSubmit usando Fetch API
+    fetch("https://formsubmit.co/ajax/contact@paygo.co.mz", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Nome: name,
+            Email: email,
+            Assunto: subject,
+            Mensagem: message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Sucesso: Muda o botão para verde
+        btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> Mensagem Enviada!';
+        btn.classList.replace('bg-brand-600', 'bg-green-600');
+        lucide.createIcons();
+
+        // Reseta o formulário após 3 segundos
+        setTimeout(() => {
+            btn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> Enviar Mensagem';
+            btn.classList.replace('bg-green-600', 'bg-brand-600');
+            document.getElementById('contactForm').reset();
+            lucide.createIcons();
+        }, 3000);
+    })
+    .catch(error => {
+        // Erro: Muda o botão para vermelho em caso de falha
+        btn.innerHTML = '<i data-lucide="x" class="w-5 h-5"></i> Erro ao enviar';
+        btn.classList.replace('bg-brand-600', 'bg-red-600');
+        lucide.createIcons();
+
+        setTimeout(() => {
+            btn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> Tentar Novamente';
+            btn.classList.replace('bg-red-600', 'bg-brand-600');
+            lucide.createIcons();
+        }, 3000);
+    });
 }
+
 
 window.addEventListener('scroll', () => {
 const nav = document.getElementById('navbar');
@@ -272,3 +314,4 @@ window.scrollY > 20 ? nav.classList.add('glass-nav') : nav.classList.remove('gla
 </script>
 </body>
     </html>
+
